@@ -20,7 +20,7 @@
 ## O‘rnatish va sozlash
 1. Loyihani yuklab oling:
 ``` bash
-    git clone <repo_link>
+    git clone https://github.com/BekVision/CRM_system.git
     cd clothes
 ```
 1. Virtual muhit yaratish va faollashtirish:
