@@ -1,5 +1,4 @@
 # CRM_system
-# Clothes CRM
 **Clothes CRM** — bu kiyim-kechak do‘koni uchun mo‘ljallangan, mijozlar, mahsulotlar, buyurtmalar va ombor boshqaruvi imkoniyatlarini o‘zida jamlagan, zamonaviy va qulay CRM (Customer Relationship Management) tizimi.
 ## Loyihaning asosiy imkoniyatlari
 - **Mijozlarni boshqarish:** Yangi mijozlar qo‘shish, tahrirlash, ro‘yxatini ko‘rish va o‘chirish.
