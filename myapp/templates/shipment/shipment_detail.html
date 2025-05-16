@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yuk tafsilotlari</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h3>Yuk tafsilotlari</h3>
+    <table class="table">
+        <tr><th>Buyurtma:</th><td>{{ shipment.order.id }}</td></tr>
+        <tr><th>Kuryer nomi:</th><td>{{ shipment.courier_name }}</td></tr>
+        <tr><th>Tracking raqami:</th><td>{{ shipment.tracking_number }}</td></tr>
+        <tr><th>Manzil:</th><td>{{ shipment.delivery_address }}</td></tr>
+        <tr><th>Holati:</th><td>{{ shipment.shipment_status }}</td></tr>
+        <tr><th>Yuborilgan vaqti:</th><td>{{ shipment.ship_date }}</td></tr>
+    </table>
+    <a href="{% url 'shipment_update' shipment.id %}" class="btn btn-primary">Tahrirlash</a>
+    <a href="{% url 'order_detail' shipment.order.id %}" class="btn btn-secondary">Orqaga</a>
+</div>
+</body>
+</html>

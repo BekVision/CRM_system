@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mahsulotlar Ro‘yxati</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="mb-4">Mahsulotlar</h1>
+  <div class="row">
+    <!-- New Product Form -->
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">Yangi Mahsulot Qo‘shish</div>
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="mb-3">
+              {{ form.name.label_tag }} {{ form.name }} {{ form.name.errors }}
+            </div>
+            <div class="mb-3">
+              {{ form.category.label_tag }} {{ form.category }} {{ form.category.errors }}
+            </div>
+            <div class="mb-3">
+              {{ form.color.label_tag }} {{ form.color }} {{ form.color.errors }}
+            </div>
+            <div class="mb-3">
+              {{ form.brand.label_tag }} {{ form.brand }} {{ form.brand.errors }}
+            </div>
+            <div class="mb-3">
+              {{ form.price.label_tag }} {{ form.price }} {{ form.price.errors }}
+            </div>
+            <div class="mb-3">
+              {{ form.image.label_tag }} {{ form.image }} {{ form.image.errors }}
+            </div>
+            <button type="submit" class="btn btn-success">Saqlash</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Product Table -->
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Nomi</th>
+            <th>Kategoriya</th>
+            <th>Brand</th>
+            <th>Narx</th>
+            <th>Amallar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in products %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.category.name }}</td>
+            <td>{{ p.brand }}</td>
+            <td>{{ p.price }} UZS</td>
+            <td>
+              <a href="{% url 'product_update' p.pk %}" class="btn btn-sm btn-primary">Tahrirlash</a>
+              <a href="{% url 'product_delete' p.pk %}" class="btn btn-sm btn-danger">O‘chirish</a>
+              <a href="{% url 'product_inventory' p.pk %}" class="btn btn-sm btn-info">Inventar</a>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6" class="text-center">Hech qanday mahsulot topilmadi.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
