@@ -72,7 +72,7 @@ Taklif va hissa qo‘shish uchun:
 4. Pull request yuboring.
 
 ## Muallif va litsenziya
-- Muallif: [Sizning ismingiz]
+- Muallif: Asadbek.
 - Litsenziya: MIT
 
 **Savollar va takliflar uchun:** Issues bo‘limida yozib qoldiring.
