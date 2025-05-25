@@ -23,8 +23,9 @@ jobs:
         host: bek85.me
         username: root
         key: ${{ secrets.KEY }}
-
         script: |
           cd CRM_system/
+          git reset --hard HEAD
+          git clean -fd
           git pull
           systemctl restart gunicorn.service
